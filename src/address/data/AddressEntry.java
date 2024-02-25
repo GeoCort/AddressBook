@@ -8,19 +8,19 @@ public class AddressEntry {
     String State;
     String phone;
     String email;
-    int zip;
+    String zip;
 
     public AddressEntry(){
         setFirstName("");
         setLastName("");
-        setZip(0);
+        setZip("");
         setEmail("");
         setPhone("");
         setState("");
         setCity("");
         setStreet("");
     }
-    public AddressEntry(String firstName, String lastName, String street, String city, String State, String phone, String email, int zip){
+    public AddressEntry(String firstName, String lastName, String street, String city, String State, String phone, String email, String zip){
         this.firstName = firstName;
         this.lastName = lastName;
         this.street = street;;
@@ -95,11 +95,11 @@ public class AddressEntry {
         this.email = email;
     }
 
-    public int getZip() {
+    public String getZip() {
         return zip;
     }
 
-    public void setZip(int zip) {
+    public void setZip(String zip) {
         this.zip = zip;
     }
 }

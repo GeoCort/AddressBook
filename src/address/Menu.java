@@ -3,9 +3,9 @@ package address;
 import java.util.Scanner;
 
 public class Menu {
-
-
-    Menu(){
+    AddressBook currentBook;
+    Menu(AddressBook currentBook){
+        this.currentBook = currentBook;
         displayMenu();
     }
 
@@ -32,6 +32,10 @@ public class Menu {
                 addition();
                 displayMenu();
                 break;
+            case 'e':
+                this.currentBook.list();
+                displayMenu();
+                break;
             case 'f':
             default:
                 break;
@@ -43,32 +47,117 @@ public class Menu {
      * This function will prompt user with the necessary information
      * @return successful if user added, fail if the information criteria is not correct
      */
-    public static Boolean addition(){
+    public static void addition(){
         Scanner scan = new Scanner(System.in); // get input from user
         // prompt user for information
         System.out.println("Add a new contact");
-        System.out.println("Please enter a first name");
-        String input = "";
-        input = scan.nextLine();
-        System.out.println(input + "waasup");
-        return false;
+        String firstName = prompt_firstName();
+        String lastName = prompt_lastName();
+    }
+    /**
+     * prompt for First Name
+     *
+     * @return the First Name entered in by the user, if nothing entered in will use default
+     */
+    public static String prompt_firstName() {
+        System.out.print("First Name:");
+        Scanner scan = new Scanner(System.in);
+        String in = scan.nextLine();
+        if(in.length()> 2 && in.length() < 25)
+            return in;
+        else
+            return "";
     }
 
-    /**
-     * Test if the input from user meets criteria
-     * @return 1 for success, 0 otherwise
-     */boolean promptChecker(String input){
-       return (input.length() <= 2 || input.length() > 20) ? false :true;
-    }
     /**
      * prompt for Last Name
      *
      * @return the Last Name entered in by the user, if nothing entered in will use default
      */
     public static String prompt_lastName() {
-        System.out.print("First Name:");
+        System.out.print("Last Name:");
+        Scanner scan = new Scanner(System.in);
+        String in = scan.nextLine();
+        if(in.length()> 2 && in.length() < 25)
+            return in;
+        else
+            return "";
+    }
+    /**
+     * prompt for Street
+     *
+     * @return the Street Name entered in by the user, if nothing entered in will use default
+     */
+    public static String prompt_streetName() {
+        System.out.print("Street Name:");
+        Scanner scan = new Scanner(System.in);
+        String in = scan.nextLine();
+        return in;
+    }
+    /**
+     * prompt for City
+     *
+     * @return the City Name entered in by the user, if nothing entered in will use default
+     */
+    public static String prompt_cityName() {
+        System.out.print("City Name:");
+        Scanner scan = new Scanner(System.in);
+        String in = scan.nextLine();
+        return in;
+    }
+    /**
+     * prompt for State Abbreviation
+     *
+     * @return the State Name entered in by the user, if nothing entered in will use default
+     */
+    public static String prompt_stateName() {
+        System.out.print("State Name:");
+        Scanner scan = new Scanner(System.in);
+        String in = scan.nextLine();
+        return in;
+    }
+    /**
+     * prompt for Phone Number
+     *
+     * @return the Phone Number entered in by the user, if nothing entered in will use default
+     */
+    public static String prompt_phoneNumber() {
+        System.out.print("Phone number:");
+        Scanner scan = new Scanner(System.in);
+        String in = scan.nextLine();
+        in = in.replace("-", ""); // remove user inputs such as dashes
+        in = in.replace("(", ""); // remove user inputs such as Parens
+        in = in.replace(")", ""); // remove user inputs such as Parens
+        in = in.replace("+", ""); // remove user inputs such as pluses
+        return in;
+    }
+    /**
+     * prompt for Email
+     *
+     * @return the Email Name entered in by the user, if nothing entered in will use default
+     */
+    public static String prompt_emailName() {
+        Scanner scan = new Scanner(System.in);
+        String in = "";
+        do{
+            System.out.print("Please give out email Name:");
+            in = scan.nextLine();
+            if(in.length() < 3) {
+                System.out.println("Email address too short. Try again");
+                continue;
+            }
+        }while(!in.contains("@") );
 
-        //for now return a default first name
-        return "Jane";
+        return in;
+    }
+    /**
+     *  Returns the Zip Code for an address Book
+     * @return ZIP CODE for user
+     */
+    public static String prompt_zipCode(){
+        Scanner scan = new Scanner(System.in);
+        String in = "";
+        scan.nextLine();
+        return in;
     }
 }

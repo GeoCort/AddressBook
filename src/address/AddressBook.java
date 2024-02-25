@@ -16,9 +16,13 @@ public class AddressBook {
         }
     }
     public void list(){
-        for(AddressEntry li : entry){
-            System.out.println(li.toString());
-            System.out.println();
+        if(entry.size() == 0) {
+            System.out.println("This book is currently empty");
+        }else{
+            for(AddressEntry li : entry){
+                System.out.println(li.toString());
+                System.out.println();
+            }
         }
     }
     public void add(AddressEntry address){
