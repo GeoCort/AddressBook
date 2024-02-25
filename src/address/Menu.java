@@ -27,18 +27,38 @@ public class Menu {
                 System.out.println("Wrong input value, please try again");
             }
         }while(option < 'a' || option > 'f');
-        scan.close();
+        switch (option){
+            case'b':
+                addition();
+                displayMenu();
+                break;
+            case 'f':
+            default:
+                break;
+        }
     }
-    /**
-     * prompt for First Name
-     *
-     * @return the First Name entered in by the user, if nothing entered in will use default
-     */
-    public static String prompt_FirstName() {
-        System.out.println("First Name:");
 
-        //for now return a default first name
-        return "Jane";
+    /**
+     * Adding an additional entry into the address book
+     * This function will prompt user with the necessary information
+     * @return successful if user added, fail if the information criteria is not correct
+     */
+    public static Boolean addition(){
+        Scanner scan = new Scanner(System.in); // get input from user
+        // prompt user for information
+        System.out.println("Add a new contact");
+        System.out.println("Please enter a first name");
+        String input = "";
+        input = scan.nextLine();
+        System.out.println(input + "waasup");
+        return false;
+    }
+
+    /**
+     * Test if the input from user meets criteria
+     * @return 1 for success, 0 otherwise
+     */boolean promptChecker(String input){
+       return (input.length() <= 2 || input.length() > 20) ? false :true;
     }
     /**
      * prompt for Last Name
