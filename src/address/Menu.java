@@ -4,7 +4,7 @@ import address.data.AddressEntry;
 import java.util.Scanner;
 
 public class Menu {
-    static AddressBook currentBook;
+    public AddressBook currentBook;
     Menu(AddressBook currentBook){
         this.currentBook = currentBook;
         displayMenu();
@@ -29,8 +29,17 @@ public class Menu {
             }
         }while(option < 'a' || option > 'f');
         switch (option){
-            case'b':
+            case 'b':
                 addition();
+                displayMenu();
+                break;
+            case 'c':
+                System.out.println("Search for which contact you would like to remove:");
+                    this.currentBook.find(prompt_lastName());
+
+            case 'd':
+                System.out.println("Find a contact by lastName:");
+                this.currentBook.find(prompt_lastName());
                 displayMenu();
                 break;
             case 'e':
@@ -48,7 +57,7 @@ public class Menu {
      * This function will prompt user with the necessary information
      * @return successful if user added, fail if the information criteria is not correct
      */
-    public static void addition(){
+    public void addition(){
 // prompt for user information
         System.out.println("Add a new contact");
         String firstName = prompt_firstName();
@@ -67,11 +76,11 @@ public class Menu {
      *
      * @return the First Name entered in by the user, if nothing entered in will use default
      */
-    public static String prompt_firstName() {
+    public String prompt_firstName() {
         System.out.print("First Name:");
         Scanner scan = new Scanner(System.in);
         String in = scan.nextLine();
-        if(in.length()> 2 && in.length() < 25)
+        if(in.length() < 25)
             return in;
         else
             return "";
@@ -82,21 +91,22 @@ public class Menu {
      *
      * @return the Last Name entered in by the user, if nothing entered in will use default
      */
-    public static String prompt_lastName() {
+    public String prompt_lastName() {
         System.out.print("Last Name:");
         Scanner scan = new Scanner(System.in);
         String in = scan.nextLine();
-        if(in.length()> 2 && in.length() < 25)
+        if(in.length()> 2 && in.length() < 25) {
             return in;
-        else
+        }else{
             return "";
+         }
     }
     /**
      * prompt for Street
      *
      * @return the Street Name entered in by the user, if nothing entered in will use default
      */
-    public static String prompt_streetName() {
+    public String prompt_streetName() {
         System.out.print("Street Name:");
         Scanner scan = new Scanner(System.in);
         String in = scan.nextLine();
@@ -107,7 +117,7 @@ public class Menu {
      *
      * @return the City Name entered in by the user, if nothing entered in will use default
      */
-    public static String prompt_cityName() {
+    public String prompt_cityName() {
         System.out.print("City Name:");
         Scanner scan = new Scanner(System.in);
         String in = scan.nextLine();
@@ -118,7 +128,7 @@ public class Menu {
      *
      * @return the State Name entered in by the user, if nothing entered in will use default
      */
-    public static String prompt_stateName() {
+    public String prompt_stateName() {
         System.out.print("State Name:");
         Scanner scan = new Scanner(System.in);
         String in = scan.nextLine();
@@ -129,7 +139,7 @@ public class Menu {
      *
      * @return the Phone Number entered in by the user, if nothing entered in will use default
      */
-    public static String prompt_phoneNumber() {
+    public String prompt_phoneNumber() {
         System.out.print("Phone number:");
         Scanner scan = new Scanner(System.in);
         String in = scan.nextLine();
@@ -144,11 +154,11 @@ public class Menu {
      *
      * @return the Email Name entered in by the user, if nothing entered in will use default
      */
-    public static String prompt_emailName() {
+    public String prompt_emailName() {
         Scanner scan = new Scanner(System.in);
         String in = "";
         do{
-            System.out.print("Please give out email Name:");
+            System.out.print("Please give out email:");
             in = scan.nextLine();
             if(in.length() < 3) {
                 System.out.println("Email address too short. Try again");
@@ -162,11 +172,11 @@ public class Menu {
      *  Returns the Zip Code for an address Book
      * @return ZIP CODE for user
      */
-    public static String prompt_zipCode(){
-        System.out.println("Zip Code: ");
+    public String prompt_zipCode(){
+        System.out.print("Zip Code: ");
         Scanner scan = new Scanner(System.in);
         String in = "";
-        scan.nextLine();
+        in = scan.nextLine();
         return in;
 
     }

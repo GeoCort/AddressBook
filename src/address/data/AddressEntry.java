@@ -38,7 +38,6 @@ public class AddressEntry {
                 "\nEmail: " + this.email+
                 "\nZip Code: " + this.zip;
 
-
     }
     public String getFirstName() {
         return firstName;
@@ -102,5 +101,21 @@ public class AddressEntry {
 
     public void setZip(String zip) {
         this.zip = zip;
+    }
+
+    /**
+     * Compares an Address Entry for equivalence
+     * @param entry
+     * @return True or false
+     */
+    public boolean equalsTo(AddressEntry entry){
+        return this.firstName == entry.firstName
+                && this.lastName == entry.lastName
+                && this.getPhone() == entry.getPhone()
+                && this.getStreet() == entry.getStreet()
+                && this.getCity() == entry.getCity()
+                && this.getEmail() == entry.getEmail()
+                && this.getState() == entry.getState()
+                && this.getZip() == entry.getZip();
     }
 }
