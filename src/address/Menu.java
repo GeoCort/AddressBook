@@ -1,9 +1,10 @@
 package address;
+import address.data.AddressEntry;
 
 import java.util.Scanner;
 
 public class Menu {
-    AddressBook currentBook;
+    static AddressBook currentBook;
     Menu(AddressBook currentBook){
         this.currentBook = currentBook;
         displayMenu();
@@ -48,11 +49,18 @@ public class Menu {
      * @return successful if user added, fail if the information criteria is not correct
      */
     public static void addition(){
-        Scanner scan = new Scanner(System.in); // get input from user
-        // prompt user for information
+// prompt for user information
         System.out.println("Add a new contact");
         String firstName = prompt_firstName();
         String lastName = prompt_lastName();
+        String street = prompt_streetName();
+        String city = prompt_cityName();
+        String state = prompt_stateName();
+        String phone = prompt_phoneNumber();
+        String email = prompt_emailName();
+        String zipCode = prompt_zipCode();
+        AddressEntry entry = new AddressEntry(firstName,lastName,street,city,state,phone,email,zipCode);
+        currentBook.add(entry);
     }
     /**
      * prompt for First Name
@@ -155,6 +163,7 @@ public class Menu {
      * @return ZIP CODE for user
      */
     public static String prompt_zipCode(){
+        System.out.println("Zip Code: ");
         Scanner scan = new Scanner(System.in);
         String in = "";
         scan.nextLine();

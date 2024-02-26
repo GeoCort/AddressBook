@@ -35,7 +35,8 @@ public class AddressEntry {
                 "\nlastName: " + this.lastName+
                 "\nAddress: "+this.street + " " + this.city + " "+ this.State.toUpperCase() + ", " + this.zip +
                 "\nTelephone #: " + this.phone+
-                "\nEmail: " + this.email;
+                "\nEmail: " + this.email+
+                "\nZip Code: " + this.zip;
 
 
     }
