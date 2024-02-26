@@ -10,6 +10,10 @@ public class Menu {
         displayMenu();
     }
 
+    /**
+     * Begins AddressBook Application
+     * Gets user input to do a following action
+     */
     public void displayMenu(){
         char option = 0;
         Scanner scan = new Scanner(System.in);
@@ -53,7 +57,7 @@ public class Menu {
     }
 
     /**
-     * Adding an additional entry into the address book
+     * Add an entry into the address book
      * This function will prompt user with the necessary information
      * @return successful if user added, fail if the information criteria is not correct
      */

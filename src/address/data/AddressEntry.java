@@ -31,13 +31,11 @@ public class AddressEntry {
         this.zip   = zip;
     }
     public String toString(){
-        return "firstName: " + this.firstName +
-                "\nlastName: " + this.lastName+
+        return "FirstName: " + this.firstName +
+                "\nLastName: " + this.lastName+
                 "\nAddress: "+this.street + " " + this.city + " "+ this.State.toUpperCase() + ", " + this.zip +
                 "\nTelephone #: " + this.phone+
-                "\nEmail: " + this.email+
-                "\nZip Code: " + this.zip;
-
+                "\nEmail: " + this.email;
     }
     public String getFirstName() {
         return firstName;

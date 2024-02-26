@@ -55,7 +55,7 @@ public class AddressBook {
         }
         count =0;
         for(AddressEntry f : found){
-            System.out.println("index : " + count++ + f);
+            System.out.print("index : " + count++ + f);
         }
 
         if(found.size() == 0){
