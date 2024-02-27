@@ -50,7 +50,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     /**
      * @author George Cortes
      * overrides the toString method to print into the system out
-     * @return
+     * @return String formatted output of an Address Entry
      */
     public String toString(){
         return "FirstName: " + this.firstName +
@@ -63,7 +63,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     /**
      * @author George Cortes
      * gets the first Name of an Address Entry object
-     * @return String
+     * @return String first name
      */
     public String getFirstName() {
         return firstName;
@@ -72,15 +72,15 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     /**
      * @author George Cortes
      * Changes first name in an Address Entry to firstName
-     * @param firstName
+     * @param firstName the first Name
      */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
     /**
      * @author George Cortes
-     * Returns the last name of an Address Entry Object
-     * @return String
+     * Gets last name
+     * @return String last name of an Address Entry Object
      */
     public String getLastName() {
         return lastName;
@@ -89,7 +89,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     /**
      * @author George Cortes
      * Sets the last name of an Address Entry Object to lastName
-     * @param lastName
+     * @param lastName last name that will be initialized
      */
     public void setLastName(String lastName) {
         this.lastName = lastName;
@@ -107,7 +107,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     /**
      * @author George Cortes
      * changes the Street variable in an Address Entry object to street
-     * @param street
+     * @param street the street name
      */
     public void setStreet(String street) {
         this.street = street;
@@ -125,7 +125,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     /**
      * @author George Cortes
      * Sets the city of an Address Entry object to city
-     * @param city
+     * @param city the city name
      */
     public void setCity(String city) {
         this.city = city;
@@ -143,7 +143,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     /**
      * @author George Cortes
      * sets the state variable of an Address Entry Object to state
-     * @param state
+     * @param state the state name
      */
     public void setState(String state) {
         this.state = state;
@@ -161,7 +161,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     /**
      * @author George Cortes
      * sets the PhoneNumber vairable of an Address Entry object to phone
-     * @param phone
+     * @param phone the phone number
      */
     public void setPhone(String phone) {
         this.phone = phone;
@@ -179,7 +179,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     /**
      * @author George Cortes
      * sets the Email of an Address Entry object to email
-     * @param email
+     * @param email the email, must include @
      */
     public void setEmail(String email) {
         this.email = email;
@@ -197,7 +197,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     /**
      * @author George Cortes
      * sets the Zip Code of an Address Entry object to zip
-     * @param zip
+     * @param zip the zipcode
      */
     public void setZip(String zip) {
         this.zip = zip;
@@ -206,12 +206,12 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     /**
      * @author George Cortes
      * Compares an Address Entry for equivalence
-     * @param entry
+     * @param entry an Address Entry object
      * @return True if equal, false otherwise
      */
     public boolean equalsTo(AddressEntry entry){
-        return this.firstName.compareTo(firstName) == 0
-                && this.lastName.compareTo(entry.lastName) ==0
+        return this.getFirstName().compareTo(entry.getFirstName()) == 0
+                && this.getLastName().compareTo(entry.getLastName()) ==0
                 && this.getPhone().compareTo(entry.getPhone()) == 0
                 && this.getStreet().compareTo(entry.getStreet() )==0
                 && this.getCity().compareTo(entry.getCity()) == 0
@@ -223,7 +223,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     /**
      * @author George Cortes
      * @param o the object to be compared.
-     * @return -1 if o is larger, 0 if equal, and >0 if o is smaller
+     * @return -1 if o is larger, 0 if equal, and greater than 0 if o is smaller
      */
     @Override
     public int compareTo(AddressEntry o) {

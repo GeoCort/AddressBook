@@ -17,7 +17,6 @@ public class AddressEntryTest {
     }
     /**
      * tests for equivalence
-     * @return String
      */
     @Test
     public void getFirstName() {
@@ -36,7 +35,6 @@ public class AddressEntryTest {
     }
     /**
      * tests for equivalence
-     * @return String
      */
     @Test
     public void getLastName() {
@@ -54,7 +52,6 @@ public class AddressEntryTest {
     }
     /**
      * tests for equivalence
-     * @return String
      */
     @Test
     public void getStreet() {
@@ -72,7 +69,6 @@ public class AddressEntryTest {
     }
     /**
      * tests for equivalence
-     * @return String
      */
     @Test
     public void getCity() {
@@ -90,7 +86,6 @@ public class AddressEntryTest {
     }
     /**
      * tests for equivalence
-     * @return String
      */
     @Test
     public void getState() {
@@ -108,7 +103,6 @@ public class AddressEntryTest {
     }
     /**
      * tests for equivalence
-     * @return String
      */
     @Test
     public void getPhone() {
@@ -126,7 +120,6 @@ public class AddressEntryTest {
     }
     /**
      * tests for equivalence
-     * @return String
      */
     @Test
     public void getEmail() {
@@ -144,7 +137,6 @@ public class AddressEntryTest {
     }
     /**
      * tests for equivalence
-     * @return String
      */
     @Test
     public void getZip() {
@@ -163,7 +155,6 @@ public class AddressEntryTest {
 
     /**
      * Checks if two objects are equal
-     * @returns true if equal, false otherwise
      */
     @Test
     public void equalsTo() {

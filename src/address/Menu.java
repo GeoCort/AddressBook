@@ -72,7 +72,6 @@ public class Menu {
      * @author George Cortes
      * Add an entry into the address book
      * This function will prompt user with the necessary information
-     * @return successful if user added, fail if the information criteria is not correct
      */
     public void addition(){
 // prompt for user information
@@ -92,8 +91,6 @@ public class Menu {
     /**
      * @author George Cortes
      * read and load contents of a file into the Address Book
-     * @throws FileNotFoundException if the file is not found
-     * @throws IOException Input Output error has occurred
      */
     public void readFile(){
         Scanner scan = new Scanner(System.in);
@@ -127,7 +124,6 @@ public class Menu {
     /**
      * @author George Cortes
      * prompt for First Name
-     *
      * @return the First Name entered in by the user, if nothing entered in will use default
      */
     public String prompt_firstName() {

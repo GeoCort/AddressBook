@@ -13,7 +13,6 @@ public class MenuTest {
     @Test
     /**
      * user input prompted and returned as string
-     * @return String first Name
      */
     public void prompt_firstName() {
         Menu menu = new Menu();
@@ -25,7 +24,6 @@ public class MenuTest {
 
     /**
      * user input prompted and returned as string
-     * @return String last Name
      */
     @Test
     public void prompt_lastName() {
@@ -38,7 +36,6 @@ public class MenuTest {
 
     /**
      * user input prompted and returned as string
-     * @return String Street Name
      */
     @Test
     public void prompt_streetName() {
@@ -50,7 +47,6 @@ public class MenuTest {
     }
     /**
      * user input prompted and returned as string
-     * @return String city Name
      */
     @Test
     public void prompt_cityName() {
@@ -62,7 +58,6 @@ public class MenuTest {
     }
     /**
      * user input prompted and returned as string
-     * @return String State name
      */
     @Test
     public void prompt_stateName() {
@@ -74,7 +69,6 @@ public class MenuTest {
     }
     /**
      * user input prompted and returned as string
-     * @return String Phone Number
      */
     @Test
     public void prompt_phoneNumber() {
@@ -87,7 +81,6 @@ public class MenuTest {
     }
     /**
      * user input prompted and returned as string
-     * @return String email
      */
     @Test
     public void prompt_emailName() {
@@ -100,7 +93,6 @@ public class MenuTest {
     }
     /**
      * user input prompted and returned as string
-     * @return String zipcode
      */
     @Test
     public void prompt_zipCode() {
