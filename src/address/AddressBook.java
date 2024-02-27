@@ -8,6 +8,7 @@ public class AddressBook {
     List<AddressEntry> entry;
 
     /**
+     * @author George Cortes
      * default constructor initializes the linked list
      */
     AddressBook() {
@@ -15,6 +16,7 @@ public class AddressBook {
     }
 
     /**
+     * @author George Cortes
      * creates an AddressBook with e Address Entry elements added into it
      * @param e Linked List of Address Entries
      */
@@ -25,6 +27,7 @@ public class AddressBook {
     }
 
     /**
+     * @author George Cortes
      * constructor that initializes an AddressBook with an Address Entry element e
      * @param e Address Entry
      */
@@ -34,6 +37,7 @@ public class AddressBook {
     }
 
     /**
+     * @author George Cortes
      * displays the contents of the AddressBook
      * contents are in ascending order by last name
      */
@@ -50,6 +54,7 @@ public class AddressBook {
     }
 
     /**
+     * @author George Cortes
      * Adds address to AddressBook
      * Will ignore duplicates
      * @param address   An Address Entry object
@@ -57,14 +62,15 @@ public class AddressBook {
     public void add(AddressEntry address){
         for(AddressEntry e : this.entry){
             if(e.equalsTo(address)){
+                System.out.println("These equal");
                 return;
             }
         }
         entry.add(address);
-        return;
     }
 
     /**
+     * @author George Cortes
      * Searches the AddressBook for partial and exact matches of user given string
      * returns none if no results found
      * @param lastNameEntry     User inputted string used to search the Address Book
@@ -86,6 +92,7 @@ public class AddressBook {
     }
 
     /**
+     * @author George Cortes
      * removes an entry from a searched list
      * @param entry     user inputted string
      * @return true if successfully removed; false if not removed

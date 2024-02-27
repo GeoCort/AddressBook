@@ -11,6 +11,7 @@ public class Menu {
     }
 
     /**
+     * @author George Cortes
      * Begins AddressBook Application
      * Gets user input to do a following action
      */
@@ -33,6 +34,10 @@ public class Menu {
             }
         }while(option < 'a' || option > 'f');
         switch (option){
+            case 'a':
+                readFile();
+                displayMenu();
+                break;
             case 'b':
                 addition();
                 displayMenu();
@@ -59,6 +64,7 @@ public class Menu {
     }
 
     /**
+     * @author George Cortes
      * Add an entry into the address book
      * This function will prompt user with the necessary information
      * @return successful if user added, fail if the information criteria is not correct
@@ -75,14 +81,19 @@ public class Menu {
         String email = prompt_emailName();
         String zipCode = prompt_zipCode();
         AddressEntry entry = new AddressEntry(firstName,lastName,street,city,state,phone,email,zipCode);
-        currentBook.add(entry);
+        this.currentBook.add(entry);
     }
 
     /**
-     * read from a file
-     * @param filename
+     * @author George Cortes
+     * read and load contents of a file into the Address Book
+     * @throws FileNotFoundException if the file is not found
+     * @throws IOException Input Output error has occurred
      */
-    public void readFile(String filename){
+    public void readFile(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter the file name");
+        String filename = scan.nextLine();
         try {
             BufferedReader reader = new BufferedReader(new FileReader(filename));
             String fileString = reader.readLine();
@@ -99,8 +110,9 @@ public class Menu {
                 this.currentBook.add(entry);
                 fileString = reader.readLine();
             }
-
+            reader.close();
         } catch (FileNotFoundException e) {
+            System.out.println("File not found");
             throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -108,6 +120,7 @@ public class Menu {
 
     }
     /**
+     * @author George Cortes
      * prompt for First Name
      *
      * @return the First Name entered in by the user, if nothing entered in will use default
@@ -123,6 +136,7 @@ public class Menu {
     }
 
     /**
+     * @author George Cortes
      * prompt for Last Name
      *
      * @return the Last Name entered in by the user, if nothing entered in will use default
@@ -138,6 +152,7 @@ public class Menu {
          }
     }
     /**
+     * @author George Cortes
      * prompt for Street
      *
      * @return the Street Name entered in by the user, if nothing entered in will use default
@@ -149,6 +164,7 @@ public class Menu {
         return in;
     }
     /**
+     * @author George Cortes
      * prompt for City
      *
      * @return the City Name entered in by the user, if nothing entered in will use default
@@ -160,6 +176,7 @@ public class Menu {
         return in;
     }
     /**
+     * @author George Cortes
      * prompt for State Abbreviation
      *
      * @return the State Name entered in by the user, if nothing entered in will use default
@@ -171,6 +188,7 @@ public class Menu {
         return in;
     }
     /**
+     * @author George Cortes
      * prompt for Phone Number
      *
      * @return the Phone Number entered in by the user, if nothing entered in will use default
@@ -186,6 +204,7 @@ public class Menu {
         return in;
     }
     /**
+     * @author George Cortes
      * prompt for Email
      *
      * @return the Email Name entered in by the user, if nothing entered in will use default
@@ -205,7 +224,8 @@ public class Menu {
         return in;
     }
     /**
-     *  Returns the Zip Code for an address Book
+     * @author George Cortes
+     * Returns the Zip Code for an address Book
      * @return ZIP CODE for user
      */
     public String prompt_zipCode(){

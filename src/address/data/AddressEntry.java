@@ -11,7 +11,8 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     String zip;
 
     /**
-     * Base Constructor with defaul values
+     * Base Constructor with default values
+     * @author George Cortes
      */
     public AddressEntry(){
         setFirstName("");
@@ -25,7 +26,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     }
 
     /**
-     *
+     * @author George Cortes
      * @param firstName     first name of an entry
      * @param lastName      last name of an entry
      * @param street        the street of an entry
@@ -47,6 +48,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     }
 
     /**
+     * @author George Cortes
      * overrides the toString method to print into the system out
      * @return
      */
@@ -59,6 +61,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     }
 
     /**
+     * @author George Cortes
      * gets the first Name of an Address Entry object
      * @return String
      */
@@ -67,6 +70,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     }
 
     /**
+     * @author George Cortes
      * Changes first name in an Address Entry to firstName
      * @param firstName
      */
@@ -74,6 +78,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
         this.firstName = firstName;
     }
     /**
+     * @author George Cortes
      * Returns the last name of an Address Entry Object
      * @return String
      */
@@ -82,6 +87,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     }
 
     /**
+     * @author George Cortes
      * Sets the last name of an Address Entry Object to lastName
      * @param lastName
      */
@@ -90,6 +96,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     }
 
     /**
+     * @author George Cortes
      * Returns the street of an Address Entry Object
      * @return String
      */
@@ -98,6 +105,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     }
 
     /**
+     * @author George Cortes
      * changes the Street variable in an Address Entry object to street
      * @param street
      */
@@ -106,6 +114,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     }
 
     /**
+     * @author George Cortes
      * returns the city
      * @return String
      */
@@ -114,6 +123,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     }
 
     /**
+     * @author George Cortes
      * Sets the city of an Address Entry object to city
      * @param city
      */
@@ -122,6 +132,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     }
 
     /**
+     * @author George Cortes
      * gets the State of an Address Entry Object
      * @return String
      */
@@ -130,6 +141,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     }
 
     /**
+     * @author George Cortes
      * sets the state variable of an Address Entry Object to state
      * @param state
      */
@@ -138,6 +150,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     }
 
     /**
+     * @author George Cortes
      * gets the Phone Number of an Address Entry object
      * @return String
      */
@@ -146,6 +159,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     }
 
     /**
+     * @author George Cortes
      * sets the PhoneNumber vairable of an Address Entry object to phone
      * @param phone
      */
@@ -154,6 +168,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     }
 
     /**
+     * @author George Cortes
      * gets the email of an Address Entry object
      * @return String
      */
@@ -162,6 +177,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     }
 
     /**
+     * @author George Cortes
      * sets the Email of an Address Entry object to email
      * @param email
      */
@@ -170,6 +186,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     }
 
     /**
+     * @author George Cortes
      * gets the Zip code of an Address Entry object
      * @return int
      */
@@ -178,6 +195,7 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     }
 
     /**
+     * @author George Cortes
      * sets the Zip Code of an Address Entry object to zip
      * @param zip
      */
@@ -186,29 +204,30 @@ public class AddressEntry implements Comparable<AddressEntry>  {
     }
 
     /**
+     * @author George Cortes
      * Compares an Address Entry for equivalence
      * @param entry
      * @return True if equal, false otherwise
      */
     public boolean equalsTo(AddressEntry entry){
-        return this.firstName == entry.firstName
-                && this.lastName == entry.lastName
-                && this.getPhone() == entry.getPhone()
-                && this.getStreet() == entry.getStreet()
-                && this.getCity() == entry.getCity()
-                && this.getEmail() == entry.getEmail()
-                && this.getState() == entry.getState()
-                && this.getZip() == entry.getZip();
+        return this.firstName.compareTo(firstName) == 0
+                && this.lastName.compareTo(entry.lastName) ==0
+                && this.getPhone().compareTo(entry.getPhone()) == 0
+                && this.getStreet().compareTo(entry.getStreet() )==0
+                && this.getCity().compareTo(entry.getCity()) == 0
+                && this.getEmail().compareTo(entry.getEmail() ) == 0
+                && this.getState().compareTo(entry.getState() ) ==0
+                && this.getZip().compareTo(entry.getZip() ) == 0;
     }
 
     /**
-     *
+     * @author George Cortes
      * @param o the object to be compared.
      * @return -1 if o is larger, 0 if equal, and >0 if o is smaller
      */
     @Override
     public int compareTo(AddressEntry o) {
-        if(this.getLastName() == o.getLastName()){
+        if(this.getLastName().compareTo(o.getLastName()) == 0 ){
             return this.getFirstName().compareTo(o.getFirstName());
         }else{
             return this.getLastName().compareTo(o.getLastName());
