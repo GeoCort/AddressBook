@@ -1,10 +1,15 @@
 package address;
 import address.data.AddressEntry;
+import com.sun.jdi.request.ClassUnloadRequest;
+
 import java.io.*;
 import java.util.Scanner;
 
 public class Menu {
     public AddressBook currentBook;
+    Menu(){
+        this.currentBook = new AddressBook();
+    }
     Menu(AddressBook currentBook){
         this.currentBook = currentBook;
         displayMenu();

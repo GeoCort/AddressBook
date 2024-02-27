@@ -62,7 +62,6 @@ public class AddressBook {
     public void add(AddressEntry address){
         for(AddressEntry e : this.entry){
             if(e.equalsTo(address)){
-                System.out.println("These equal");
                 return;
             }
         }
@@ -82,7 +81,7 @@ public class AddressBook {
         for(AddressEntry record : this.entry){
             if(record.getLastName().contains(lastNameEntry)){
                 found.add(record);
-                System.out.println(count++ + " : " +record);
+                System.out.println(count++ + " : \n" +record);
                 System.out.println();
             }
         }
