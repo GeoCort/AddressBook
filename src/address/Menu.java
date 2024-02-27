@@ -39,7 +39,9 @@ public class Menu {
                 break;
             case 'c':
                 System.out.println("Search for which contact you would like to remove:");
-                    this.currentBook.find(prompt_lastName());
+                    this.currentBook.remove(prompt_lastName());
+                    displayMenu();
+                    break;
 
             case 'd':
                 System.out.println("Find a contact by lastName:");

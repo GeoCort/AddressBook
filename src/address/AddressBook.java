@@ -6,15 +6,37 @@ import java.util.*;
 
 public class AddressBook {
     List<AddressEntry> entry;
+
+    /**
+     * default constructor initializes the linked list
+     */
     AddressBook() {
         this.entry = new LinkedList<AddressEntry>();
     }
+
+    /**
+     * creates an AddressBook with e Address Entry elements added into it
+     * @param e Linked List of Address Entries
+     */
     AddressBook(List<AddressEntry>e){
         for(AddressEntry k : e){
             this.entry.add(k);
         }
     }
 
+    /**
+     * constructor that initializes an AddressBook with an Address Entry element e
+     * @param e Address Entry
+     */
+    AddressBook(AddressEntry e){
+        this.entry = new LinkedList<AddressEntry>();
+        entry.add(e);
+    }
+
+    /**
+     * displays the contents of the AddressBook
+     * contents are in ascending order by last name
+     */
     public void list(){
         if(entry.size() == 0) {
             System.out.println("This book is currently empty");
@@ -26,15 +48,27 @@ public class AddressBook {
             }
         }
     }
+
+    /**
+     * Adds address to AddressBook
+     * Will ignore duplicates
+     * @param address   An Address Entry object
+     */
     public void add(AddressEntry address){
         for(AddressEntry e : this.entry){
-            if(e.equalsTo( address)){
+            if(e.equalsTo(address)){
                 return;
             }
         }
         entry.add(address);
         return;
     }
+
+    /**
+     * Searches the AddressBook for partial and exact matches of user given string
+     * returns none if no results found
+     * @param lastNameEntry     User inputted string used to search the Address Book
+     */
     public void find(String lastNameEntry){
         Set<AddressEntry> found = new HashSet<AddressEntry>();
         System.out.println("THE ENTRY IS : " + lastNameEntry);
@@ -50,6 +84,12 @@ public class AddressBook {
             System.out.println("No results found");
         }
     }
+
+    /**
+     * removes an entry from a searched list
+     * @param entry     user inputted string
+     * @return true if successfully removed; false if not removed
+     */
     public boolean remove(String entry){
         Set<AddressEntry> found = new HashSet<AddressEntry>();
         Scanner scan = new Scanner(System.in);
