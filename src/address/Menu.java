@@ -1,6 +1,6 @@
 package address;
 import address.data.AddressEntry;
-
+import java.io.*;
 import java.util.Scanner;
 
 public class Menu {
@@ -75,6 +75,36 @@ public class Menu {
         AddressEntry entry = new AddressEntry(firstName,lastName,street,city,state,phone,email,zipCode);
         currentBook.add(entry);
     }
+
+    /**
+     * read from a file
+     * @param filename
+     */
+    public void readFile(String filename){
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(filename));
+            String fileString = reader.readLine();
+            while(fileString != null){
+                String firstName = fileString;
+                String lastName = reader.readLine();
+                String street = reader.readLine();
+                String city = reader.readLine();
+                String state = reader.readLine();
+                String zipCode = reader.readLine();
+                String email = reader.readLine();
+                String phoneNumber = reader.readLine();
+                AddressEntry entry = new AddressEntry(firstName,lastName,street,city,state,phoneNumber,email,zipCode);
+                this.currentBook.add(entry);
+                fileString = reader.readLine();
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
     /**
      * prompt for First Name
      *
@@ -99,7 +129,7 @@ public class Menu {
         System.out.print("Last Name:");
         Scanner scan = new Scanner(System.in);
         String in = scan.nextLine();
-        if(in.length()> 2 && in.length() < 25) {
+        if(in.length() < 25) {
             return in;
         }else{
             return "";

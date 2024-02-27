@@ -19,6 +19,7 @@ public class AddressBook {
         if(entry.size() == 0) {
             System.out.println("This book is currently empty");
         }else{
+            Collections.sort(this.entry);
             for(AddressEntry li : entry){
                 System.out.println(li.toString());
                 System.out.println();
@@ -26,16 +27,22 @@ public class AddressBook {
         }
     }
     public void add(AddressEntry address){
+        for(AddressEntry e : this.entry){
+            if(e.equalsTo( address)){
+                return;
+            }
+        }
         entry.add(address);
         return;
     }
     public void find(String lastNameEntry){
         Set<AddressEntry> found = new HashSet<AddressEntry>();
+        System.out.println("THE ENTRY IS : " + lastNameEntry);
         int count = 0;
         for(AddressEntry record : this.entry){
             if(record.getLastName().contains(lastNameEntry)){
                 found.add(record);
-             System.out.println(count++ + " : " +record);
+                System.out.println(count++ + " : " +record);
                 System.out.println();
             }
         }
